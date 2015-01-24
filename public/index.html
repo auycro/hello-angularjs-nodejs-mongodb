@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <title>auiterisk</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!--script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.min.js"></script-->
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="aui/services/controllers.js"></script>
+	</head>
+	<body ng-app="">
+    <div class="container" ng-controller="ServicesCtrl">
+      <h1>Service Client Side</h1>
+      {{message}} 
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Topic</th>
+            <th>&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!--STEP2.2 add input form-->
+          <!--tr ng-repeat="faq in faqarray"-->
+            <!--STEP2.2 add input form-->
+            <!--td>{{faq.topickey}}</td-->
+            <!--STEP2.2 add input form-->
+          <tr>
+            <td>
+              <input class="form-control" ng-model="faq.name"/>
+            </td>
+            <td>
+              <button class="btn btn-primary" ng-click="createFaq()">NewFAQ</button>
+              <button class="btn btn-primary" ng-click="updateFaq()">UpdateFAQ</button>
+            </td>
+          </tr>
+          <tr ng-repeat="faq in faqarray">
+            <!--STEP2.2 add input form-->
+            <td>{{faq.name}}</td>
+            <td>
+              <button class="btn btn-danger" ng-click="removeFaq(faq._id)">Remove</button>
+              <button class="btn btn-warning" ng-click="selectFaq(faq._id)">Select</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+	</body>
+</html>
