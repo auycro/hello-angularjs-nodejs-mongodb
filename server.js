@@ -11,7 +11,11 @@ var app = express();
 app.use(express.static(__dirname + '/public'));
 //Set express to parse body to data
 //app.use(express.bodyParser()); //OLD NODEVERSION
-app.use(bodyParser());
+//app.use(bodyParser()); //Depreciated 2015/01/28
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
 //Send back JSON
 /*Step2*/
